@@ -50,13 +50,20 @@ async function loadBlog(postsToShow = null) {
       revealSections();
     }
 
-  } catch (err) { console.error("Blog load error:", err); }
+  } catch (err) {
+    console.error("Blog load error:", err);
+  }
 }
 
 function revealBlogCards() {
   document.querySelectorAll(".blog-card").forEach(card => {
     new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add("show"); obs.unobserve(entry.target); }});
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add("show");
+          obs.unobserve(entry.target);
+        }
+      });
     }, {threshold:0.2}).observe(card);
   });
 }
@@ -75,8 +82,14 @@ function revealSections() {
 
 // --- Mobile Menu ---
 function setupMenu() {
-  const toggle = document.getElementById("menu-toggle"), nav = document.getElementById("nav-links");
-  if(toggle && nav) toggle.addEventListener("click", () => nav.classList.toggle("open"));
+  const toggle = document.getElementById("menu-toggle");
+  const nav = document.getElementById("nav-links");
+  if(toggle && nav){
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+      toggle.classList.toggle("active"); // optional visual cue
+    });
+  }
 }
 
 // --- Active Link Highlight ---
@@ -96,11 +109,18 @@ function highlightNav() {
 }
 
 // --- Transition animations ---
-document.querySelectorAll(".transition").forEach(el => {
-  new IntersectionObserver((entries, obs) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("show"); obs.unobserve(e.target); } });
-  }, {threshold:0.2}).observe(el);
-});
+function setupTransitions() {
+  document.querySelectorAll(".transition").forEach(el => {
+    new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add("show");
+          obs.unobserve(e.target);
+        }
+      });
+    }, {threshold:0.2}).observe(el);
+  });
+}
 
 // --- PWA Service Worker ---
 if("serviceWorker" in navigator){
@@ -118,25 +138,31 @@ window.addEventListener('beforeinstallprompt', (e) => {
   btn.addEventListener('click', () => {
     btn.style.display='none';
     deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(choice => { console.log('User choice:', choice.outcome); deferredPrompt=null; });
+    deferredPrompt.userChoice.then(choice => {
+      console.log('User choice:', choice.outcome);
+      deferredPrompt = null;
+    });
   });
 });
 
 // --- Init ---
 document.addEventListener("DOMContentLoaded", () => {
+  // Daily Scripture
   const scriptureBox = document.getElementById("scripture-text");
   if(scriptureBox) scriptureBox.textContent = getDailyScripture();
 
+  // Blog content
   const path = window.location.pathname;
   if(path.includes("blog.html")) loadBlog();
-  else if(path.includes("index.html") || path === "/" || path === "") loadBlog(posts => posts.sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,2));
+  else if(path.includes("index.html") || path === "/" || path === "") 
+    loadBlog(posts => posts.sort((a,b)=>new Date(b.date)-new Date(a.date)).slice(0,2));
   else revealSections();
 
+  // Menu & navigation
   setupMenu();
   highlightNav();
+  setupTransitions();
 });
-
-
 
 
 
