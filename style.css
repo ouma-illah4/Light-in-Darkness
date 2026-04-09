@@ -1265,22 +1265,23 @@ audio {
     display: block;
   }
 
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-    background: #111; /* or your theme */
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-    border-radius: 0 0 0 10px;
-  }
+  /* Mobile menu default hidden */
+#nav-links {
+  display: none;
+  flex-direction: column;
+  background: #fff;
+  position: absolute;
+  top: 60px; /* adjust to navbar height */
+  right: 0;
+  width: 200px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 100;
+}
 
-  .nav-links.open {
-    display: flex;
-  }
+/* When menu is open */
+#nav-links.open {
+  display: flex;
 }
 
 
