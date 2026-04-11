@@ -1259,36 +1259,26 @@ audio {
 }
 
 
+/* MOBILE MENU */
 @media (max-width: 768px) {
 
   .menu-btn {
     display: block;
   }
 
-  /* Mobile menu default hidden */
-#nav-links {
-  display: none;
-  flex-direction: column;
-  background: #fff;
-  position: absolute;
-  top: 60px; /* adjust to navbar height */
-  right: 0;
-  width: 200px;
-  padding: 1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-  z-index: 100;
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background: #000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 1000;
+  }
+
+  #nav-links.open {
+    display: flex;
+  }
 }
-
-/* When menu is open */
-#nav-links.open {
-  display: flex;
-}
-
-
-
-
-
-
-
-
- 
