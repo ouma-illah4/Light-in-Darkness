@@ -1278,7 +1278,7 @@ audio {
     z-index: 1000;
   }
 
-  #nav-links.open {
+  .nav-links.open {
     display: flex;
   }
 }
