@@ -1,4 +1,4 @@
-/* GENERAL RESET */
+
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +48,9 @@ header {
 /* NAVIGATION LINKS */
 .nav-links {
   list-style: none;
+  display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-links a {
@@ -271,14 +273,6 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
 }
 
 nav a {
@@ -1258,4 +1252,145 @@ audio {
    #nav-links.open {
     display: flex;
   }
+}
+/* ==================== CREATIVE VISUALS PAGE ==================== */
+.visuals-gallery .resource-card {
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.visuals-gallery .resource-card:hover {
+    transform: translateY(-8px);
+}
+
+.visuals-gallery .resource-card img {
+    width: 100%;
+    max-height: 320px;           /* controls how tall the image can be */
+    object-fit: cover;           /* keeps proportions, no stretching */
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.visuals-gallery .resource-card h3 {
+    margin: 0 0 0.4rem 0;
+    color: #ffdd57;
+}
+
+.visuals-gallery .resource-card .artist {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+.visuals-gallery .resource-card .description {
+    line-height: 1.7;
+    color: #ddd;
+}
+/* ==================== UNIQUE HEROES FOR RESOURCES SUB-PAGES ==================== */
+.hero-books {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-audio {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/5269759/pexels-photo-5269759.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-visuals {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Cathedral_Sagrada_Familia.jpeg/1280px-Cathedral_Sagrada_Familia.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-toolkit {
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.pexels.com/photos/3768910/pexels-photo-3768910.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+/* ==================== UNIQUE SYMBOLIC HEROES FOR RESOURCES ==================== */
+.hero-resources {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                    url('https://images.pexels.com/photos/374870/pexels-photo-374870.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-toolkit {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                    url('https://images.pexels.com/photos/462510/pexels-photo-462510.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+/* ==================== UNIQUE SYMBOLIC HEROES FOR CONTACT & TESTIMONIES ==================== */
+.hero-testimonies {
+  background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                    url('https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-contact {
+  background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), 
+                    url('https://images.pexels.com/photos/461593/pexels-photo-461593.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ==================== TESTIMONIES PAGE FORMS ==================== */
+.share-testimony, .community-reflections {
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin: 3rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.share-testimony h2, .community-reflections h2 {
+    color: #ffdd57;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ddd;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+}
+
+button[type="submit"] {
+    background: #ffdd57;
+    color: #000;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #fff;
+    transform: translateY(-2px);
 }

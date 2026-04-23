@@ -3,26 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bible Study Toolkit | LightOverDarkness</title>
+  <title>Bible Study Toolkit | Light in the Dark</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000">
-  <link rel="apple-touch-icon" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="images/icon-192.png">
 </head>
 
 <body>
+
+  <!-- Consistent Navbar -->
   <header>
-    <div class="navbar">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="resources.html" class="active">Resources</a></li>
+    <nav class="navbar">
+      <div class="brand">
+        <a href="index.html">Light in the Dark</a>
+      </div>
+      <button id="menu-toggle" class="menu-btn" aria-label="Toggle navigation menu">☰</button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="blog.html" class="nav-link">Reflections</a></li>
+        <li><a href="tools.html" class="nav-link">The Refining Ground</a></li>
+        <li><a href="testimonies.html" class="nav-link">Testimonies</a></li>
+        <li><a href="resources.html" class="nav-link">Resources</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <section class="hero">
-    <h1>Bible Study Toolkit</h1>
-    <p>Guides, devotion sheets, and reflection prompts to deepen your time in the Word.</p>
+  <!-- NEW SYMBOLIC HERO FOR TOOLKIT -->
+  <section class="hero hero-toolkit">
+    <div class="hero-content">
+      <h1>Bible Study Toolkit</h1>
+      <p class="tagline">Guides, devotion sheets, and reflection prompts<br>to deepen your time in the Word.</p>
+    </div>
   </section>
 
   <main>
@@ -47,8 +61,15 @@
     </section>
   </main>
 
+  <!-- Back to Resources -->
+  <div class="back-to-resources">
+    <a href="resources.html">← Back to Resources</a>
+  </div>
+
   <footer>
-    <p>&copy; 2025 LightOverDarkness | All Rights Reserved</p>
+    <p>&copy; 2025 Light in the Dark — A faith-rooted space for honest recovery and spiritual rebuilding.</p>
   </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
